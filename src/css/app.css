@@ -1,0 +1,34 @@
+.radio input[type='radio'] {
+  display: none;
+  /*removes original button*/
+}
+
+.radio label:before {
+  /*styles outer circle*/
+  content: " ";
+  display: inline-block;
+  position: relative;
+  top: 3px;
+  margin: 0 5px 0 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 11px;
+  border: 1px solid gray;
+  background-color: transparent;
+}
+
+.radio label {
+  position: relative;
+}
+
+.radio label input[type='radio']:checked+span {
+  /*styles inside circle*/
+  border-radius: 9px;
+  width: 11px;
+  height: 11px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: block;
+  background-color: rgb(30,144,255);
+}

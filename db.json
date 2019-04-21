@@ -1,0 +1,48 @@
+{
+  "charities": [
+    {
+      "id": 1,
+      "name": "Corporate Social Responsibilities K.Wah Group",
+      "image": "corporate-social-responsibilities.jpg",
+      "currency": "EUR"
+    },
+    {
+      "id": 2,
+      "name": "EE Protection Deed Indeed Foundation",
+      "image": "ee-protection-deed-indeed-foundation.jpg",
+      "currency": "EUR"
+    },
+    {
+      "id": 3,
+      "name": "Navi Mumbai Environment Preservation Society",
+      "image": "navi-mumbai-environment-preservation-society.jpg",
+      "currency": "EUR"
+    },
+    {
+      "id": 4,
+      "name": "Environmental Protection Agency",
+      "image": "environmental-protection-agency.jpg",
+      "currency": "EUR"
+    },
+    {
+      "id": 5,
+      "name": "KWCM Social Club",
+      "image": "kwcm-social-club.jpg",
+      "currency": "EUR"
+    }
+  ],
+  "payments": [
+    {
+      "charitiesId": 1,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 1
+    },
+    {
+      "charitiesId": 1,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 2
+    }
+  ]
+}
