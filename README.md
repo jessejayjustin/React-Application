@@ -51,6 +51,6 @@ The flow goes something like this:
 
 ## Author
 
-* **Jesse Jay Sosmena** - *Initial work* - [jessejayjustin](https://github.com/jessejayjustin)
+* **Jesse Jay** - *Initial work* - [jessejayjustin](https://github.com/jessejayjustin)
 
 
