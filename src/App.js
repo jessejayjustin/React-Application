@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Cards from './components/Cards';
 import { summaryDonations } from './helpers';
 import { fetchCharities, fetchPayments, handleAddPayment } from './actions';
-require('es6-promise').polyfill(); /* To get to the REST of the IE incompatibilities */
+require('es6-promise').polyfill(); 
 import 'isomorphic-fetch';
 
 export class App extends Component {
