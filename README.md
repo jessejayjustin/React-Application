@@ -1,4 +1,7 @@
-## React Application (Note:- Will be change to Humanitarian aid for middle east crisis)
+## React Application
+```
+Note:- Will be change to Humanitarian aid for middle east crisis :)
+```
 
 ![alt text](https://github.com/jessejayjustin/React-Application/blob/master/resources/React%20Application.png
 )
