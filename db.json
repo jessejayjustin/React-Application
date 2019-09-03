@@ -121,6 +121,90 @@
       "amount": 50,
       "currency": "EUR",
       "id": 14
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 15
+    },
+    {
+      "charitiesId": 1,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 16
+    },
+    {
+      "charitiesId": 1,
+      "amount": 100,
+      "currency": "EUR",
+      "id": 17
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 18
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 19
+    },
+    {
+      "charitiesId": 3,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 20
+    },
+    {
+      "charitiesId": 0,
+      "amount": 20,
+      "currency": "EUR",
+      "id": 21
+    },
+    {
+      "charitiesId": 1,
+      "amount": 20,
+      "currency": "EUR",
+      "id": 22
+    },
+    {
+      "charitiesId": 1,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 23
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 24
+    },
+    {
+      "charitiesId": 0,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 25
+    },
+    {
+      "charitiesId": 4,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 26
+    },
+    {
+      "charitiesId": 0,
+      "amount": 20,
+      "currency": "EUR",
+      "id": 27
+    },
+    {
+      "charitiesId": 0,
+      "amount": 20,
+      "currency": "EUR",
+      "id": 28
     }
   ]
 }

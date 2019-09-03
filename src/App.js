@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+import { getCharities, getDonations, handleAddPayment } from './actions';
 import Card from './components/Card';
 import { summaryDonations } from './helpers';
 require('es6-promise').polyfill(); 
@@ -10,66 +12,17 @@ export class App extends Component {
   constructor(props) {
     super();
     this.state = {
-      donations: 0,
-      error: null,
-      message: "",
       currIndex: null,
-      charities: [],
     };
   }
 
   componentDidMount() {
-    this.getCharities();
-    this.getPayments();
+    this.props.getCharities();
+    this.props.getDonations();
   }
 
-  async getCharities() {
-    try {
-      const url = `http://localhost:3001/charities`;
-      const response = await fetch(url);
-      if (!response.ok) {
-        this.setState({ error: response.statusText });
-      }
-      const data = await response.json();
-      this.setState({ charities: data });
-    } catch (error) {
-      this.setState({ error: error });
-    }
-  }
-
-  async getPayments() {
-    try {
-      const url = `http://localhost:3001/payments`;
-      const response = await fetch(url);
-      if (!response.ok) {
-        this.setState({ error: response.statusText });
-      }
-      const data = await response.json();
-      this.setState({ donations: summaryDonations(data.map((item) => (item.amount)))});
-    } catch (error) {
-      this.setState({ error: error });
-    }
-  }
-
-  handlePayment(id, amt, currency) {
-    const url = `http://localhost:3001/payments`;
-    const self = this;
-    fetch(url, {
-       method: 'POST',
-       headers: {
-         'Accept': 'application/json',
-         'Content-Type': 'application/json'
-       },
-       body: JSON.stringify({
-        charitiesId : id,
-        amount: amt,
-        currency: currency
-      })
-    }).then(res => res.json())
-    .then(responseJson => {
-      self.getPayments();
-    })
-    .catch(error => console.error("error:", error));
+  handleAddPayment(id, amt, currency) {
+    this.props.handleAddPayment(id, amt, currency);
   }
   
   handleOverlay(index) {
@@ -77,14 +30,16 @@ export class App extends Component {
   }
 
   render() {
-    const { message, error, currIndex, donations, charities } = this.state;
+
+    const { currIndex } = this.state;
+    const { message, error, charities, donations } = this.props;
 
     return (
     <div className="container">
       <div className="header">
         <h3 className="text-center title">Support Child Refugees of Iraq and Syria</h3>
-        { message ? null : <p className="dn">All donations: £ {donations}</p> } 
-        { error ? null : <p className="err tex-center">{error}</p> } 
+        { message ? <p className="dn">{message}</p> : <p className="dn">All donations: £ {donations}</p> } 
+        { error ? <p className="dn">{error}</p> : null } 
       </div>
       <div className="row justify-content-center pb-5">
       { 
@@ -98,7 +53,7 @@ export class App extends Component {
             currency={item.currency}
             currIndex={currIndex}
             handleOverlay={this.handleOverlay.bind(this, index)}
-            handlePayment={this.handlePayment}
+            handlePayment={this.handleAddPayment.bind(this)}
            ></Card>
           )
         })
@@ -109,7 +64,17 @@ export class App extends Component {
   }
 }
 
-export default App;
+// Access state properties
+function mapStateToProps(state) {
+  return {
+    charities: state.store.charities,
+    donations: state.store.donations,
+    message: state.store.message,
+    error: state.store.error
+  }
+}
+
+export default connect(mapStateToProps, { getCharities, getDonations, handleAddPayment })(App);
 
 
 

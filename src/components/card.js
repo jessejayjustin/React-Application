@@ -30,7 +30,7 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
   }, [])
 
   return (
-    <div className="col-lg-5 offset-1 ml-2 column">
+    <div className="col-lg-5 col-md-9 col-sm-11 offset-1 ml-2 column">
       <div className="card">
         <div ref={overlayRef} className="overlay">
           <a ref={closeOverlayRef} className="closeOverlayBtn">X</a>
