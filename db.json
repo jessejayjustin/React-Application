@@ -2,19 +2,19 @@
   "charities": [
     {
       "id": 1,
-      "name": "Corporate Social Responsibilities K.Wah Group",
-      "image": "corporate-social-responsibilities.jpg",
+      "name": "CSR K.Wah Group",
+      "image": "hamc05.jpg",
       "currency": "EUR"
     },
     {
       "id": 2,
       "name": "EE Protection Deed Indeed Foundation",
-      "image": "ee-protection-deed-indeed-foundation.jpg",
+      "image": "hamc06.jpg",
       "currency": "EUR"
     },
     {
       "id": 3,
-      "name": "Navi Mumbai Environment Preservation Society",
+      "name": "Mumbai Environment Preservation Society",
       "image": "navi-mumbai-environment-preservation-society.jpg",
       "currency": "EUR"
     },
@@ -22,6 +22,12 @@
       "id": 4,
       "name": "Environmental Protection Agency",
       "image": "environmental-protection-agency.jpg",
+      "currency": "EUR"
+    },
+    {
+      "id": 5,
+      "name": "KWCM Social Club",
+      "image": "kwcm-social-club.jpg",
       "currency": "EUR"
     },
     {
@@ -43,6 +49,78 @@
       "amount": 50,
       "currency": "EUR",
       "id": 2
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 3
+    },
+    {
+      "charitiesId": 1,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 4
+    },
+    {
+      "charitiesId": 1,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 5
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 6
+    },
+    {
+      "charitiesId": 1,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 7
+    },
+    {
+      "charitiesId": 0,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 8
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 9
+    },
+    {
+      "charitiesId": 4,
+      "amount": 100,
+      "currency": "EUR",
+      "id": 10
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 11
+    },
+    {
+      "charitiesId": 1,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 12
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 13
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 14
     }
   ]
 }

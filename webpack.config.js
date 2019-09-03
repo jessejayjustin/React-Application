@@ -1,4 +1,7 @@
+const webpack = require('webpack');
 const path = require('path');
+
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 const config = {
   entry: './src/index.js',
@@ -39,8 +42,30 @@ const config = {
         test: /\.css$/, 
         loader: 'style-loader!css-loader'
       },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        use: 'url-loader?limit=100000'
+      },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          'style-loader',
+          // Translates CSS into CommonJS
+          'css-loader',
+          // Compiles Sass to CSS
+          'sass-loader',
+        ],
+      },
     ],
   },
+  plugins: [
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
+    })
+  ]
 };
 
 module.exports = config;

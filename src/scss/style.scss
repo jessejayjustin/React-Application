@@ -1,0 +1,124 @@
+@import './normalize.scss';
+@import './modernizer.scss';
+
+.header {
+    .title {
+      color: rgb(96,96,96);
+      margin-top: 1em;
+      font-weight: bold;
+      font-size: 33px;
+      text-align: center;
+      line-height: .5em;
+      font-family: Trebuchet MS, Helvetica, sans-serif;
+    }
+
+    .dn {
+      color: red;
+      margin: 2em 0;
+      font-weight: bold;
+      font-size: 17px;
+      text-align: center;
+      line-height: 0;
+    }
+
+    .msg {
+      color: red;
+      margin: 1em 0;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      line-height: 1em 0;
+    }
+
+    .msg {
+      color: red;
+      margin: 1em 0;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: center;
+      line-height: 1em 0;
+    }
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column {
+  margin-top: 35px;
+}
+
+.card {
+  border: 0;
+  box-shadow: 0px 3px 15px rgb(211,211,211);
+  -moz-box-shadow: 0px 3px 15px rgb(211,211,211);
+  -webkit-box-shadow: 0px 3px 15px rgb(211,211,211);
+
+  img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .card-title {
+    font-size: 15px;
+    position: relative;
+    top: 22px;
+    left: 15px;
+  }
+
+  .card-body {
+    padding: .35rem;
+
+    button {
+      position: relative;
+      top: -14px;
+      right: 11px;
+      width: 80px;
+    }
+  }
+
+  .overlay {
+    position: absolute;
+    opacity: 0.90;
+    z-index: 1;
+    width:0;
+    height:100%;
+    background-color: #fff;
+    overflow-x: hidden;
+    -webkit-transition: width 1s ease-in-out;
+    -moz-transition: width 1s ease-in-out;
+    -o-transition: width 1s ease-in-out;
+    transition: width 0.30s ease-in-out;
+
+    .closeOverlayBtn {
+      position: relative;
+      top: 1rem;
+      left: 26rem;
+      cursor: pointer;
+    }
+
+    .payBtn {
+      position: relative;
+      top: 7rem;
+      left: -6rem;
+    }
+
+    p {
+      font-size: 20px;
+      font-family: Trebuchet MS, Helvetica, sans-serif;
+      position: relative;
+      top: 3rem;
+      left: 6rem;
+    }
+
+    .custom-radio {
+      position: relative;
+      top: 3rem;
+      left: 6rem;
+    }
+  }
+
+}

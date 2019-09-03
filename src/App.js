@@ -1,106 +1,115 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import styled from 'styled-components';
-import Cards from './components/Cards';
+import Card from './components/Card';
 import { summaryDonations } from './helpers';
-import { fetchCharities, fetchPayments, handleAddPayment } from './actions';
 require('es6-promise').polyfill(); 
 import 'isomorphic-fetch';
 
 export class App extends Component {
+
   constructor(props) {
     super();
     this.state = {
+      donations: 0,
+      error: null,
+      message: "",
+      currIndex: null,
       charities: [],
-      payments: [10, 20, 50, 100, 500]
     };
-    this.handleAddPayment = this.handleAddPayment.bind(this);
   }
 
-  componentWillMount() {
-    const self = this;
-    self.props.fetchCharities()
-    self.props.fetchPayments()
+  componentDidMount() {
+    this.getCharities();
+    this.getPayments();
   }
 
-  handleAddPayment(selectedItem) {
+  async getCharities() {
+    try {
+      const url = `http://localhost:3001/charities`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        this.setState({ error: response.statusText });
+      }
+      const data = await response.json();
+      this.setState({ charities: data });
+    } catch (error) {
+      this.setState({ error: error });
+    }
+  }
+
+  async getPayments() {
+    try {
+      const url = `http://localhost:3001/payments`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        this.setState({ error: response.statusText });
+      }
+      const data = await response.json();
+      this.setState({ donations: summaryDonations(data.map((item) => (item.amount)))});
+    } catch (error) {
+      this.setState({ error: error });
+    }
+  }
+
+  handlePayment(id, amt, currency) {
+    const url = `http://localhost:3001/payments`;
     const self = this;
-    self.props.handleAddPayment(selectedItem)
+    fetch(url, {
+       method: 'POST',
+       headers: {
+         'Accept': 'application/json',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({
+        charitiesId : id,
+        amount: amt,
+        currency: currency
+      })
+    }).then(res => res.json())
+    .then(responseJson => {
+      self.getPayments();
+    })
+    .catch(error => console.error("error:", error));
   }
   
+  handleOverlay(index) {
+    this.setState({ currIndex: index });
+  }
+
   render() {
+    const { message, error, currIndex, donations, charities } = this.state;
 
-    // not trigger eslint no-undef
-    /* global Modernizr */
-   
-    const msg = {
-      color: 'red',
-      margin: '1em 0',
-      fontWeight: 'bold',
-      fontSize: '16px',
-      textAlign: 'center',
-      lineHeight: '1em 0'
-
-    };
-
-    const header = {
-      color: 'rgb(96,96,96)',
-      marginTop: '1em',
-      fontWeight: 'bold',
-      fontSize: '39px',
-      textAlign: 'center',
-      lineHeight: '.5em',
-      fontFamily: 'Trebuchet MS, Helvetica, sans-serif'
-    };
-
-    const errors = {
-      color: 'red',
-      margin: '2em 0',
-      fontWeight: 'bold',
-      fontSize: '17px',
-      textAlign: 'center',
-      lineHeight: '0'
-    };
-
-    const donations = {
-      color: 'red',
-      margin: '2em 0',
-      fontWeight: 'bold',
-      fontSize: '17px',
-      textAlign: 'center',
-      lineHeight: '0'
-    };
-
-    const donate = this.props.donate;
-    const message = this.props.message;
-    
     return (
-      <div className="app">
-        <h1 style={header}>Donate For Environmental Protection</h1>
-        { message ? null : <p style={donations}>All donations: {donate}</p> }
-        <p style={msg}>{message}</p> 
-
-       <Cards 
-        charities={this.props.charities}
-        payments={this.state.payments}
-        handlePay={this.handleAddPayment}
-       />
+    <div className="container">
+      <div className="header">
+        <h3 className="text-center title">Support Child Refugees of Iraq and Syria</h3>
+        { message ? null : <p className="dn">All donations: £ {donations}</p> } 
+        { error ? null : <p className="err tex-center">{error}</p> } 
       </div>
+      <div className="row justify-content-center pb-5">
+      { 
+        charities.map((item, index) => {
+          return (
+           <Card 
+            key={index} 
+            id={index}
+            name={item.name} 
+            image={item.image}
+            currency={item.currency}
+            currIndex={currIndex}
+            handleOverlay={this.handleOverlay.bind(this, index)}
+            handlePayment={this.handlePayment}
+           ></Card>
+          )
+        })
+      }
+      </div>
+    </div>
     );
   }
 }
 
-// Access state properties
-function mapStateToProps(state) {
-  return {
-    charities: state.store.charities,
-    donate: state.store.donate,
-    message: state.store.message
-  }
-}
-
-export default connect(mapStateToProps, {fetchCharities, fetchPayments, handleAddPayment})(App);
+export default App;
 
 
 
