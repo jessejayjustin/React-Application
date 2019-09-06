@@ -37,11 +37,11 @@ export class App extends Component {
     return (
     <div className="container">
       <div className="header">
-        <h3 className="text-center title">Support Child Refugees of Iraq and Syria</h3>
-        { message ? <p className="dn">{message}</p> : <p className="dn">All donations: £ {donations}</p> } 
-        { error ? <p className="dn">{error}</p> : null } 
+        <h3 className="text-center title">Help Children In Iraq</h3>
+        { message ? <p className="msg">{message}</p> : <p className="msg">All donations: £ {donations}</p> } 
+        { error ? <p className="msg">{error}</p> : null } 
       </div>
-      <div className="row justify-content-center pb-5">
+      <div className="row pb-5 justify-content-center">
       { 
         charities.map((item, index) => {
           return (

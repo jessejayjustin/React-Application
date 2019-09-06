@@ -2,38 +2,38 @@
   "charities": [
     {
       "id": 1,
-      "name": "CSR K.Wah Group",
-      "image": "hamc05.jpg",
+      "name": "Lorem ipsum dolor sit amet",
+      "image": "hchi16.jpg",
       "currency": "EUR"
     },
     {
       "id": 2,
-      "name": "EE Protection Deed Indeed Foundation",
-      "image": "hamc06.jpg",
+      "name": "Ut enim ad minim veniam",
+      "image": "hchi2.jpg",
       "currency": "EUR"
     },
     {
       "id": 3,
-      "name": "Mumbai Environment Preservation Society",
-      "image": "navi-mumbai-environment-preservation-society.jpg",
+      "name": "Neque porro quisquam est",
+      "image": "hchi4.jpg",
       "currency": "EUR"
     },
     {
       "id": 4,
-      "name": "Environmental Protection Agency",
-      "image": "environmental-protection-agency.jpg",
+      "name": "Sed sed mollis justo",
+      "image": "hchi12.jpg",
       "currency": "EUR"
     },
     {
       "id": 5,
-      "name": "KWCM Social Club",
-      "image": "kwcm-social-club.jpg",
+      "name": "Donec id molestie sapien",
+      "image": "hchi15.jpg",
       "currency": "EUR"
     },
     {
-      "id": 5,
-      "name": "KWCM Social Club",
-      "image": "kwcm-social-club.jpg",
+      "id": 6,
+      "name": "Et sodales augue elit et dui",
+      "image": "hchi1.jpg",
       "currency": "EUR"
     }
   ],
@@ -205,6 +205,126 @@
       "amount": 20,
       "currency": "EUR",
       "id": 28
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 29
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 30
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 31
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 32
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 33
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 34
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 35
+    },
+    {
+      "charitiesId": 0,
+      "amount": 20,
+      "currency": "EUR",
+      "id": 36
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 37
+    },
+    {
+      "charitiesId": 0,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 38
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 39
+    },
+    {
+      "charitiesId": 0,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 40
+    },
+    {
+      "charitiesId": 0,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 41
+    },
+    {
+      "charitiesId": 1,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 42
+    },
+    {
+      "charitiesId": 2,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 43
+    },
+    {
+      "charitiesId": 3,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 44
+    },
+    {
+      "charitiesId": 0,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 45
+    },
+    {
+      "charitiesId": 3,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 46
+    },
+    {
+      "charitiesId": 5,
+      "amount": 50,
+      "currency": "EUR",
+      "id": 47
+    },
+    {
+      "charitiesId": 0,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 48
     }
   ]
 }
