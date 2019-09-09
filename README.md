@@ -1,4 +1,4 @@
-## React Application
+A simple model with react single page application
 
 ![](https://github.com/jessejayjustin/React-Application/blob/master/public/images/react-app.gif)
 
