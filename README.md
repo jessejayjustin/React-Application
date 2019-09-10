@@ -1,4 +1,4 @@
-A simple boilerplate for react single page application
+A simple model of react single page application
 
 ![](https://github.com/jessejayjustin/React-Application/blob/master/public/images/react-app.gif)
 
