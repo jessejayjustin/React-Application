@@ -29,7 +29,7 @@ Launch test runner in interactive watch mode.
 npm run test
 ```
 
-##General Flow
+## General Flow
 
 The flow goes something like this:
 
@@ -43,10 +43,14 @@ The flow goes something like this:
 	
 ## Built With
 
-* [React](https://reactjs.org/docs/getting-started.html) - The web framework used
-* [Redux](https://redux.js.org/introduction/getting-started) - A framework for application state management
-* [Jest](https://github.com/facebook/jest) - A comprehensive JavaScript testing solution
-* [Enzyme](https://github.com/airbnb/enzyme) - A JavaScript Testing utility for React 
+* [React](https://reactjs.org/docs/getting-started.html) - The web framework used.
+* [Redux](https://redux.js.org/introduction/getting-started) - A framework for application state management.
+* [Webpack](https://webpack.js.org/) - Open-source JavaScript module bundler. 
+* [Sass](https://sass-lang.com/) - The most mature, stable, and powerful professional grade CSS extension language in the world.
+* [Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/) - Open source toolkit for developing with HTML, CSS, and JS.
+* [JSON Server](https://github.com/typicode/json-server) - For front-end developers who need a quick back-end for prototyping and mocking.
+* [Jest](https://github.com/facebook/jest) - A comprehensive JavaScript testing solution.
+* [Enzyme](https://github.com/airbnb/enzyme) - A JavaScript Testing utility for React. 
 
 ## Author
 
