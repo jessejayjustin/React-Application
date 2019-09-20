@@ -55,9 +55,3 @@ The flow goes something like this:
 ## Author
 
 * **Jesse Jay** - *Initial work* - [jessejayjustin](https://github.com/jessejayjustin)
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-
