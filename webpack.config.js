@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
-
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const devMode = process.env.NODE_ENV !== 'production';
 
 const config = {
   entry: './src/index.js',
@@ -49,23 +49,25 @@ const config = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // Creates `style` nodes from JS strings
-          'style-loader',
-          // Translates CSS into CommonJS
-          'css-loader',
-          // Compiles Sass to CSS
-          'sass-loader',
-        ],
+         { loader: MiniCssExtractPlugin.loader }, // inject CSS to page / style-loader
+         { loader: 'css-loader?-url' }, // translates CSS into CommonJS modules 
+         { loader: 'sass-loader?+sourceMap' } // compiles Sass to CSS
+        ]
       },
     ],
   },
+
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "styles.css"
+    }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
       $: 'jquery',
       jquery: 'jquery'
     })
-  ]
+  ],
+  mode : devMode ? 'development' : 'production'
 };
 
 module.exports = config;
