@@ -1,14 +1,16 @@
 {
-  "name": "react-application",
+  "name": "react-spa",
   "version": "1.0.0",
-  "description": "Donate For Environmental Protection",
+  "description": "react-spa",
   "main": "src/index.js",
   "repository": "",
   "author": "Jesse Jay",
-  "license": "MIT",
+  "license": "",
   "scripts": {
     "server": "json-server --watch db.json --port 3001",
     "client": "webpack-dev-server",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
     "test": "jest",
     "jest": {
       "setupFiles": [
@@ -56,6 +58,7 @@
     "file-loader": "^2.0.0",
     "jest": "^21.2.1",
     "json-server": "^0.12.0",
+    "mini-css-extract-plugin": "^0.8.0",
     "react-test-renderer": "^16.9.0",
     "redux-mock-store": "^1.5.3",
     "style-loader": "^0.19.1",
