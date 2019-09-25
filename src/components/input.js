@@ -1,16 +1,18 @@
 import React from 'react';
 
-function Input({type, className, id, value}, ref) {
+function Input({Id, index, type, value, currIndex, id, name, onClick}, ref) {
   return (
-    <div className="custom-control custom-radio custom-control-inline">
+    <div key={index} className="custom-control custom-radio custom-control-inline">
       <input 
-        ref={ref}
         type={type} 
-        className={className}
+        ref={ref}
         id={id} 
+        name={name}
+        className="custom-control-input"
         value={value} 
+        onClick={onClick}
         />
-      <label className="custom-control-label" htmlFor={id}>{value}</label>
+      <label className="custom-control-label" htmlFor={currIndex===Id ? index : ""}>{value}</label>
     </div>  
   )
 }
