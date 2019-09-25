@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Input from './input';
 
 const card = ({id, name, image, currency, currIndex, handlePayment, handleOverlay}) => {
   
@@ -39,18 +40,18 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
             {
               payments.map((amount, index) => {
                 return (
-                  <div key={index} className="custom-control custom-radio custom-control-inline">
-                    <input 
-                     type="radio" 
-                     ref={refs.current[index]}
-                     id={currIndex===id ? index : ""} 
-                     name="customRadioInline1" 
-                     className="custom-control-input" 
-                     value={amount}
-                     onClick={() => setAmt(amount)}
-                     />
-                    <label className="custom-control-label" htmlFor={currIndex===id ? index : ""}>{amount}</label>
-                  </div>
+                  <Input 
+                   key={index}
+                   Id={id}
+                   index={index}
+                   type="radio"
+                   value={amount} 
+                   currIndex={currIndex}
+                   ref={refs.current[index]}
+                   id={currIndex===id ? index : ""} 
+                   name="customRadioInline1" 
+                   onClick={() => setAmt(amount)}
+                  />
                 )
               })
             }
