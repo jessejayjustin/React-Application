@@ -33,7 +33,7 @@
     {
       "id": 6,
       "name": "Et sodales augue elit et dui",
-      "image": "hchi1.jpg",
+      "image": "hchi11.jpg",
       "currency": "EUR"
     }
   ],
@@ -325,6 +325,60 @@
       "amount": 500,
       "currency": "EUR",
       "id": 48
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 49
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 50
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 51
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 52
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 53
+    },
+    {
+      "charitiesId": 0,
+      "amount": 100,
+      "currency": "EUR",
+      "id": 54
+    },
+    {
+      "charitiesId": 1,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 55
+    },
+    {
+      "charitiesId": 0,
+      "amount": 100,
+      "currency": "EUR",
+      "id": 56
+    },
+    {
+      "charitiesId": 1,
+      "amount": 500,
+      "currency": "EUR",
+      "id": 57
     }
   ]
 }
