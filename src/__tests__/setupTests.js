@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk'
@@ -104,7 +105,7 @@ describe('action', () => {
   })
 });
 
-/* Asynchronous actions, HTTP request to a server, npm run server */
+Asynchronous actions, HTTP request to a server, npm run server 
 const middlewares = [thunk] // add your middlewares like `redux-thunk`
 const mockStore = configureMockStore(middlewares)
 
@@ -179,7 +180,7 @@ it('should execute post payments data', () => {
       expect(actions[0]).toEqual(handleAddPaymentSuccess())
     })
 })
-/* Asynchronous actions, HTTP request to a server, npm run server */
+Asynchronous actions, HTTP request to a server, npm run server 
 
 const ROOT_URL = 'http://localhost:3001';
 
@@ -234,6 +235,7 @@ describe('actions', () => {
     });
   });
 });
+*/
 
 
 
