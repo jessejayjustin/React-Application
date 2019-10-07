@@ -21,7 +21,7 @@
     {
       "id": 4,
       "name": "Sed sed mollis justo",
-      "image": "hchi12.jpg",
+      "image": "hchi3.jpg",
       "currency": "EUR"
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": 6,
       "name": "Et sodales augue elit et dui",
-      "image": "hchi11.jpg",
+      "image": "hchi12.jpg",
       "currency": "EUR"
     }
   ],
@@ -279,40 +279,10 @@
       "id": 40
     },
     {
-      "charitiesId": 0,
-      "amount": 500,
-      "currency": "EUR",
-      "id": 41
-    },
-    {
       "charitiesId": 1,
       "amount": 500,
       "currency": "EUR",
       "id": 42
-    },
-    {
-      "charitiesId": 2,
-      "amount": 500,
-      "currency": "EUR",
-      "id": 43
-    },
-    {
-      "charitiesId": 3,
-      "amount": 50,
-      "currency": "EUR",
-      "id": 44
-    },
-    {
-      "charitiesId": 0,
-      "amount": 500,
-      "currency": "EUR",
-      "id": 45
-    },
-    {
-      "charitiesId": 3,
-      "amount": 50,
-      "currency": "EUR",
-      "id": 46
     },
     {
       "charitiesId": 5,
@@ -322,63 +292,27 @@
     },
     {
       "charitiesId": 0,
-      "amount": 500,
+      "amount": 50,
       "currency": "EUR",
       "id": 48
     },
     {
-      "charitiesId": 0,
-      "amount": 10,
+      "charitiesId": 1,
+      "amount": 500,
       "currency": "EUR",
       "id": 49
     },
     {
       "charitiesId": 0,
-      "amount": 10,
+      "amount": 50,
       "currency": "EUR",
       "id": 50
     },
     {
-      "charitiesId": 0,
-      "amount": 10,
+      "charitiesId": 1,
+      "amount": 500,
       "currency": "EUR",
       "id": 51
-    },
-    {
-      "charitiesId": 0,
-      "amount": 10,
-      "currency": "EUR",
-      "id": 52
-    },
-    {
-      "charitiesId": 0,
-      "amount": 10,
-      "currency": "EUR",
-      "id": 53
-    },
-    {
-      "charitiesId": 0,
-      "amount": 100,
-      "currency": "EUR",
-      "id": 54
-    },
-    {
-      "charitiesId": 1,
-      "amount": 500,
-      "currency": "EUR",
-      "id": 55
-    },
-    {
-      "charitiesId": 0,
-      "amount": 100,
-      "currency": "EUR",
-      "id": 56
-    },
-    {
-      "charitiesId": 1,
-      "amount": 500,
-      "currency": "EUR",
-      "id": 57
     }
   ]
 }
