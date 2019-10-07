@@ -31,16 +31,17 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
   }, [])
 
   return (
-    <div className="col-lg-5 col-md-9 col-sm-11 col-xs-11 column d-flex justify-content-center d-md-table">
+    <div className="col-lg-5 col-md-9 col-sm-11 column">
       <div className="card">
         <div ref={overlayRef} className="overlay">
-          <a ref={closeOverlayRef} className="float-right mr-3 mt-3 closeBtn">x</a>
+          <a ref={closeOverlayRef} className="float-right mr-3 mt-3 close-btn">x</a>
           <p className="title text-center">Select the amount to donate</p>
-          <div className="btn-group d-flex justify-content-center d-md-table mx-auto">
+          <div className="btn-group d-flex justify-content-center">
             {
               payments.map((amount, index) => {
                 return (
                   <Input 
+                   className="inpt"
                    key={index}
                    Id={id}
                    index={index}
@@ -57,7 +58,7 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
             }
           </div>
           <button 
-           className="btn btn-sm btn-outline-primary mt-5 d-flex justify-content-center d-md-table mx-auto"
+           className="btn btn-sm btn-outline-primary mt-5 d-flex mx-auto"
            disabled={currIndex===id ? false : true}
            onClick={handlePayment.bind(
             this,
