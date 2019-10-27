@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Rendering renders <App> component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="header"
+  >
+    <h3
+      className="text-center title"
+    >
+      Donate to Save the Children Foundation
+    </h3>
+    <p
+      className="msg"
+    >
+      All donations: £ 
+    </p>
+  </div>
+  <div
+    className="row pb-5 d-flex flex-row justify-content-center"
+  >
+    <card
+      className="child"
+      currIndex={null}
+      currency="EUR"
+      handleOverlay={[Function]}
+      handlePayment={[Function]}
+      id={0}
+      image="hchi16.jpg"
+      key="0"
+      name="Lorem ipsum dolor sit amet"
+    />
+    <card
+      className="child"
+      currIndex={null}
+      currency="EUR"
+      handleOverlay={[Function]}
+      handlePayment={[Function]}
+      id={1}
+      image="hchi2.jpg"
+      key="1"
+      name="Ut enim ad minim veniam"
+    />
+    <card
+      className="child"
+      currIndex={null}
+      currency="EUR"
+      handleOverlay={[Function]}
+      handlePayment={[Function]}
+      id={2}
+      image="hchi4.jpg"
+      key="2"
+      name="Neque porro quisquam est"
+    />
+    <card
+      className="child"
+      currIndex={null}
+      currency="EUR"
+      handleOverlay={[Function]}
+      handlePayment={[Function]}
+      id={3}
+      image="hchi3.jpg"
+      key="3"
+      name="Sed sed mollis justo"
+    />
+    <card
+      className="child"
+      currIndex={null}
+      currency="EUR"
+      handleOverlay={[Function]}
+      handlePayment={[Function]}
+      id={4}
+      image="hchi15.jpg"
+      key="4"
+      name="Donec id molestie sapien"
+    />
+    <card
+      className="child"
+      currIndex={null}
+      currency="EUR"
+      handleOverlay={[Function]}
+      handlePayment={[Function]}
+      id={5}
+      image="hchi12.jpg"
+      key="5"
+      name="Et sodales augue elit et dui"
+    />
+  </div>
+</div>
+`;
