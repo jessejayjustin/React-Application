@@ -37,7 +37,7 @@
       "currency": "EUR"
     }
   ],
-  "payments": [
+  "donations": [
     {
       "charitiesId": 1,
       "amount": 500,
@@ -313,6 +313,18 @@
       "amount": 500,
       "currency": "EUR",
       "id": 51
+    },
+    {
+      "charitiesId": 5,
+      "amount": 100,
+      "currency": "EUR",
+      "id": 52
+    },
+    {
+      "charitiesId": 0,
+      "amount": 20,
+      "currency": "EUR",
+      "id": 53
     }
   ]
 }
