@@ -26,7 +26,7 @@ npm run server
 Launch test runner in interactive watch mode.
 
 ```
-npm run test
+npm test
 ```
 
 ## General Flow
