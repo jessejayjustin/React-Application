@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import { getCharities, getDonations, handleAddPayment } from './actions';
 import Card from './components/Card';
-import { summaryDonations } from './helpers';
 require('es6-promise').polyfill(); 
 import 'isomorphic-fetch';
 
@@ -19,6 +18,7 @@ export class App extends Component {
   componentDidMount() {
     this.props.getCharities();
     this.props.getDonations();
+    this.handleDonations();
   }
 
   handleAddPayment(id, amt, currency) {
@@ -50,6 +50,7 @@ export class App extends Component {
             id={index}
             name={item.name} 
             image={item.image}
+            className="child"
             currency={item.currency}
             currIndex={currIndex}
             handleOverlay={this.handleOverlay.bind(this, index)}
