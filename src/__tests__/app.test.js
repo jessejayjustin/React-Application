@@ -14,6 +14,7 @@ import { Card } from '../components/card';
 import * as actions from '../actions';
 import * as types from '../action-types';
 import summaryDonations from '../helpers';
+var sinon = require('sinon');
 configure({ adapter: new Adapter() });
 
 const props = {
@@ -39,6 +40,24 @@ const charities = [
     "id": 3,
     "name": "Neque porro quisquam est",
     "image": "hchi4.jpg",
+    "currency": "EUR"
+  },
+  {
+    "id": 4,
+    "name": "Sed sed mollis justo",
+    "image": "hchi3.jpg",
+    "currency": "EUR"
+  },
+  {
+    "id": 5,
+    "name": "Donec id molestie sapien",
+    "image": "hchi15.jpg",
+    "currency": "EUR"
+  },
+  {
+    "id": 6,
+    "name": "Et sodales augue elit et dui",
+    "image": "hchi12.jpg",
     "currency": "EUR"
   }
 ];
@@ -84,7 +103,6 @@ describe('Component Rendering', () => {
   it('should have a <div> with properly className prop', () => {
     expect(containerProp.className).toEqual('text-center title');
   });
-
 });
 
 const middlewares = [thunk]; // add your middlewares like redux-thunk`
@@ -155,31 +173,25 @@ describe('async actions', () => {
 /*
 describe('async actions', () => {
   afterEach(() => {
-    fetchMock.restore()
-  })
+    nock.cleanAll();
+  });
 
-  it('creates UPDATE_TOTAL_DONATIONS when post donations has been done', () => {
-    fetchMock.getOnce('/donations', {
-      body: { donations: ['do something'] },
-      headers: { 'content-type': 'application/json' }
-    })
+  it('creates UPDATE_TOTAL_DONATIONS when post has been done', () => {
+    nock('http://localhost:3001')
+      .post('/donations', { donations: 500 })
+      .reply(200, { donations: 500 });
 
     const expectedActions = [
-      { type: types.FETCH_TODOS_REQUEST },
-      { type: types.FETCH_TODOS_SUCCESS, body: { donations: ['do something'] } }
+      { type: types.UPDATE_TOTAL_DONATIONS, payload: { donations: 500 } }
     ]
-    const store = mockStore({ donations: [] })
 
-    return store.dispatch(actions.handleAddPayment()).then(() => {
-      // return of async actions
+    const store = mockStore({ donations: [] });
+    store.dispatch(actions.handleAddPayment()).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
-    })
-  })
-})
+    });
+  });
+});
 */
-     
-
-
 
 
 
