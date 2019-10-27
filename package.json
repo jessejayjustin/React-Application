@@ -22,6 +22,7 @@
     }
   },
   "dependencies": {
+    "babel-core": "^6.26.3",
     "bootstrap": "^4.3.1",
     "es6-promise": "^4.2.8",
     "isomorphic-fetch": "^2.2.1",
@@ -55,8 +56,9 @@
     "enzyme-to-json": "^3.4.0",
     "eslint": "^4.8.0",
     "eslint-plugin-react": "^7.14.3",
+    "fetch-mock": "^7.5.1",
     "file-loader": "^2.0.0",
-    "jest": "^21.2.1",
+    "jest": "^24.0.0",
     "json-server": "^0.12.0",
     "mini-css-extract-plugin": "^0.8.0",
     "react-test-renderer": "^16.9.0",
