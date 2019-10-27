@@ -18,7 +18,6 @@ export class App extends Component {
   componentDidMount() {
     this.props.getCharities();
     this.props.getDonations();
-    this.handleDonations();
   }
 
   handleAddPayment(id, amt, currency) {
