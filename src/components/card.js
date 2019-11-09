@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import Input from './input';
 
 const card = ({id, name, image, currency, currIndex, handlePayment, handleOverlay}) => {
@@ -6,13 +6,13 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
   const [amt, setAmt] = useState(10);
   const [payments, setPayments] = useState([10,20,50,100,500]);
 
-  const refs = useRef([React.createRef(), React.createRef()]);
+  const refs = React.useRef([React.createRef(), React.createRef()]);
 
-  const overlayRef = useRef();
-  const openOverlayRef = useRef();
-  const closeOverlayRef = useRef();
+  const overlayRef = React.useRef();
+  const openOverlayRef = React.useRef();
+  const closeOverlayRef = React.useRef();
 
-  useEffect(() => {
+  React.useEffect(() => {
 
     const handleOverlayOpen = () => {
       overlayRef.current.style.width = '100%';
@@ -28,7 +28,7 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
       closeOverlayRef.current.removeEventListener('click', handleOverlayClose);
     }
 
-  }, [])
+  }, []);
 
   return (
     <div className="col-lg-5 col-md-9 col-sm-11 column">
@@ -72,7 +72,7 @@ const card = ({id, name, image, currency, currIndex, handlePayment, handleOverla
         <img className="img-fluid" src={require(`../../public/images/${image}`)} />
         <div className="card-body">
           <h5 className="card-title">{name}<a href="#" className="float-right"></a></h5>
-          <button ref={openOverlayRef} className="btn btn-sm btn-outline-primary float-right" onClick={handleOverlay}>Donate</button>
+          <button ref={openOverlayRef} className="btn btn-sm btn-outline-primary float-right open" onClick={handleOverlay}>Donate</button>
         </div>
       </div>
     </div>
