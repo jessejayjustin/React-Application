@@ -1,16 +1,16 @@
-import { GET_CHARITIES_SUCCESS, UPDATE_TOTAL_DONATIONS, UPDATE_MESSAGE, ERROR_MESSAGE } from "../action-types";
+import { FETCH_CHARITIES_SUCCESS, UPDATE_TOTAL_DONATIONS, UPDATE_MESSAGE, ERROR_MESSAGE } from "../action-types";
 
 const initialState = {
    donations: 0,
    charities: [],
    message: '',
-   error: null,
+   error: null
 };
 
 function appReducer(state = initialState, action) {
 	switch (action.type) {
 		
-		case GET_CHARITIES_SUCCESS:
+		case FETCH_CHARITIES_SUCCESS:
 		return Object.assign({}, state, {
 		  charities: state.charities.concat(action.payload)
 		});
