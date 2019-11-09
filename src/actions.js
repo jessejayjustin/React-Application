@@ -1,20 +1,20 @@
-import { GET_CHARITIES_SUCCESS, UPDATE_TOTAL_DONATIONS, UPDATE_MESSAGE, ERROR_MESSAGE } from "./action-types";
+import { FETCH_CHARITIES_SUCCESS, UPDATE_TOTAL_DONATIONS, UPDATE_MESSAGE, ERROR_MESSAGE } from "./action-types";
 import summaryDonations from './helpers';
 
-export function getCharities() {
+export function fetchCharities() {
   return dispatch => {
     const url = `http://localhost:3001/charities`;
     return fetch(url)
     .then(function(resp) { return resp.json(); })
     .then(function(data) {
-      dispatch({ type: GET_CHARITIES_SUCCESS, payload: data });
+      dispatch({ type: FETCH_CHARITIES_SUCCESS, payload: data });
     }).catch(err => {
       dispatch({ type: ERROR_MESSAGE, payload: err });
     });
   };
 };
 
-export function getDonations() {
+export function fetchDonations() {
   return dispatch => {
     const url = `http://localhost:3001/donations`;
     return fetch(url)
