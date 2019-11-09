@@ -325,6 +325,18 @@
       "amount": 20,
       "currency": "EUR",
       "id": 53
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 54
+    },
+    {
+      "charitiesId": 0,
+      "amount": 10,
+      "currency": "EUR",
+      "id": 55
     }
   ]
 }
