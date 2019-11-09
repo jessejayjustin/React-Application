@@ -12,13 +12,8 @@
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
     "test": "jest",
-    "jest": {
-      "setupFiles": [
-        "./src/appTests.js"
-      ],
-      "snapshotSerializers": [
-        "enzyme-to-json/serializer"
-      ]
+    "jest": { 
+      "moduleNameMapper": { "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/config/jest/assetsTransformer.j", "\\.(css|less)$": "<rootDir>/config/jest/assetsTransformer.js" }
     }
   },
   "dependencies": {
@@ -47,6 +42,8 @@
     "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/runtime": "^7.5.5",
+    "@testing-library/react": "^9.3.1",
+    "@testing-library/react-hooks": "^3.1.1",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^22.4.4",
     "babel-loader": "^8.0.6",
