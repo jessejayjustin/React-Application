@@ -8,100 +8,77 @@ import { Provider } from 'react-redux';
 import renderer from 'react-test-renderer';
 import Adapter from 'enzyme-adapter-react-16';
 import configureMockStore from 'redux-mock-store';
-import { configure, mount, shallow, render } from 'enzyme';
+import { configure, mount, shallow } from 'enzyme';
+import { renderHook, act } from '@testing-library/react-hooks';
 import SmartComponent, { App } from '../App';
-import { Card } from '../components/card';
+import Card from '../components/card';
 import * as actions from '../actions';
 import * as types from '../action-types';
 import summaryDonations from '../helpers';
-var sinon = require('sinon');
 configure({ adapter: new Adapter() });
 
-const props = {
-  getCharities: jest.fn(),
-  getDonations: jest.fn(),
-  handleAddPayment: jest.fn()
-}
+describe('App', () => {
+  let props;
+  let charities;
+  let wrapper;
+  let container; 
+  let containerProp;
 
-const charities = [ 
-  {
+  charities = [{
     "id": 1,
     "name": "Lorem ipsum dolor sit amet",
     "image": "hchi16.jpg",
     "currency": "EUR"
-  },
-  {
-    "id": 2,
-    "name": "Ut enim ad minim veniam",
-    "image": "hchi2.jpg",
-    "currency": "EUR"
-  },
-  {
-    "id": 3,
-    "name": "Neque porro quisquam est",
-    "image": "hchi4.jpg",
-    "currency": "EUR"
-  },
-  {
-    "id": 4,
-    "name": "Sed sed mollis justo",
-    "image": "hchi3.jpg",
-    "currency": "EUR"
-  },
-  {
-    "id": 5,
-    "name": "Donec id molestie sapien",
-    "image": "hchi15.jpg",
-    "currency": "EUR"
-  },
-  {
-    "id": 6,
-    "name": "Et sodales augue elit et dui",
-    "image": "hchi12.jpg",
-    "currency": "EUR"
-  }
-];
+  }];
 
-describe('Component Rendering', () => {
-  let wrapper, container, containerProp;
+  describe('Component Rendering', () => {
 
-  beforeEach(() => {
-    wrapper = shallow(<App charities={charities} {...props} />);
-    container = wrapper.find('h3');
-    containerProp = container.props();
-  });
+    beforeEach(() => {
+      props = {
+        fetchCharities: jest.fn(),
+        fetchDonations: jest.fn()
+      }
+      wrapper = shallow(<App charities={charities} {...props} />);
+      container = wrapper.find('h3');
+      containerProp = container.props();
+    });
 
-  it('renders <App> component', () => {
-    expect(wrapper).toBeDefined();
-    expect(toJson(wrapper)).toMatchSnapshot();
-  });
+    it("loads charities", () => {
+      expect(props.fetchCharities).toHaveBeenCalled();
+    });
 
-  it('should have a <div>', () => {
-    expect(wrapper.find('div')).toHaveLength(3); 
-  });
+    it('renders <App> component', () => {
+      expect(wrapper).toBeDefined();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
 
-  it('should have a <div>', () => {
-    expect(wrapper.find('p')).toHaveLength(1); 
-  });
+    it('should have a <div>', () => {
+      expect(wrapper.find('div')).toHaveLength(3); 
+    });
 
-  it('should have a <div> with className container', () => {
-    expect(wrapper.find('.container')).toHaveLength(1);
-  });
+    it('should have a <div>', () => {
+      expect(wrapper.find('p')).toHaveLength(1); 
+    });
 
-  it('should have a <div> with className header', () => {
-    expect(wrapper.find('.header')).toHaveLength(1);
-  });
+    it('should have a <div> with className container', () => {
+      expect(wrapper.find('.container')).toHaveLength(1);
+    });
 
-  it('should have a <div> with className row', () => {
-    expect(wrapper.find('.row')).toHaveLength(1);
-  });
+    it('should have a <div> with className header', () => {
+      expect(wrapper.find('.header')).toHaveLength(1);
+    });
 
-  it('renders child component', () => {
-    expect(wrapper.find('Card')).toBeDefined();
-  });
+    it('should have a <div> with className row', () => {
+      expect(wrapper.find('.row')).toHaveLength(1);
+    });
 
-  it('should have a <div> with properly className prop', () => {
-    expect(containerProp.className).toEqual('text-center title');
+    it('renders child component', () => {
+      expect(wrapper.find('Card')).toBeDefined();
+    });
+
+    it('should have a <div> with properly className prop', () => {
+      expect(containerProp.className).toEqual('text-center title');
+    });
   });
 });
 
@@ -139,11 +116,11 @@ describe('async actions', () => {
       .reply(200, { charities: ['do something'] });
 
     const expectedActions = [
-      { type: types.GET_CHARITIES_SUCCESS, payload: { charities: ['do something']  } }
+      { type: types.FETCH_CHARITIES_SUCCESS, payload: { charities: ['do something']  } }
     ]
 
     const store = mockStore({ charities: [] });
-    store.dispatch(actions.getCharities()).then(() => {
+    store.dispatch(actions.fetchCharities()).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
     });
   });
@@ -151,7 +128,7 @@ describe('async actions', () => {
 
 describe('async actions', () => {
   afterEach(() => {
-    nock.cleanAll();
+    nock.cleanAll()
   });
 
   it('creates UPDATE_TOTAL_DONATIONS when fetching donations has been done', () => {
@@ -165,33 +142,58 @@ describe('async actions', () => {
     ];
 
     const store = mockStore({});
-    store.dispatch(actions.getDonations()).then(() => {
+    store.dispatch(actions.fetchDonations()).then(() => {
       expect(store.getActions()).toEqual(expectedActions)
     });
   });
 });
+
+describe('Child Component', () => {
+  let wrapper, props;
+
+  describe('Card Component Rendering', () => {
+
+    beforeEach(() => {
+      props = {
+        image: 'hchi16.jpg',
+        handlePayment: jest.fn(),
+        handleOverlay: jest.fn()
+      }
+      wrapper = shallow(<Card {...props} />);
+    });
+
+    it('renders <Card> component', () => {
+      expect(wrapper).toBeDefined();
+      expect(toJson(wrapper)).toMatchSnapshot();
+    });
+  });
+});
+
 /*
 describe('async actions', () => {
   afterEach(() => {
-    nock.cleanAll();
+    fetchMock.restore()
   });
 
-  it('creates UPDATE_TOTAL_DONATIONS when post has been done', () => {
-    nock('http://localhost:3001')
-      .post('/donations', { donations: 500 })
-      .reply(200, { donations: 500 });
+  it('creates UPDATE_MESSAGE when post has been done', () => {
+    fetchMock.post('http://localhost:3001/donations', {
+      body: {charitiesId: 1, amount: 500, currency: 'EUR' },
+      headers: { 'content-type': 'application/json' }
+    })
 
-    const expectedActions = [
-      { type: types.UPDATE_TOTAL_DONATIONS, payload: { donations: 500 } }
-    ]
+    const expectedActions = [{
+      type: types.UPDATE_MESSAGE,
+      payload: '' 
+    }]
 
-    const store = mockStore({ donations: [] });
-    store.dispatch(actions.handleAddPayment()).then(() => {
+    const store = mockStore({
+      message: ''
+    })
+
+    store.dispatch(actions.handleAddPayment()).then(function () {
       expect(store.getActions()).toEqual(expectedActions)
     });
   });
 });
 */
-
-
 
