@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
-import { getCharities, getDonations, handleAddPayment } from './actions';
-import Card from './components/Card';
+import { fetchCharities, fetchDonations, handleAddPayment } from './actions';
+import Card from './components/card';
 require('es6-promise').polyfill(); 
 import 'isomorphic-fetch';
 
@@ -16,8 +16,8 @@ export class App extends Component {
   }
 
   componentDidMount() {
-    this.props.getCharities();
-    this.props.getDonations();
+    this.props.fetchCharities();
+    this.props.fetchDonations();
   }
 
   handleAddPayment(id, amt, currency) {
@@ -74,7 +74,7 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { getCharities, getDonations, handleAddPayment })(App);
+export default connect(mapStateToProps, { fetchCharities, fetchDonations, handleAddPayment })(App);
 
 
 
