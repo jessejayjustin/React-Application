@@ -36,7 +36,7 @@ export class App extends Component {
     return (
     <div className="container">
       <div className="header">
-        <h3 className="text-center title">Donate to Save the Children Foundation</h3>
+        <h3 className="text-center title">Donate to Save the Wildlife Foundation</h3>
         { message ? <p className="msg">{message}</p> : <p className="msg">All donations: £ {donations}</p> } 
         { error ? <p className="msg">{error}</p> : null } 
       </div>
