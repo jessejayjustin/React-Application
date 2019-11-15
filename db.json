@@ -3,37 +3,37 @@
     {
       "id": 1,
       "name": "Lorem ipsum dolor sit amet",
-      "image": "hchi16.jpg",
+      "image": "sanimalf3.jpg",
       "currency": "EUR"
     },
     {
       "id": 2,
       "name": "Ut enim ad minim veniam",
-      "image": "hchi2.jpg",
+      "image": "sanimalf8.jpg",
       "currency": "EUR"
     },
     {
       "id": 3,
       "name": "Neque porro quisquam est",
-      "image": "hchi4.jpg",
+      "image": "sanimalf5.jpg",
       "currency": "EUR"
     },
     {
       "id": 4,
       "name": "Sed sed mollis justo",
-      "image": "hchi3.jpg",
+      "image": "sanimalf4.jpg",
       "currency": "EUR"
     },
     {
       "id": 5,
       "name": "Donec id molestie sapien",
-      "image": "hchi15.jpg",
+      "image": "sanimalf2.jpg",
       "currency": "EUR"
     },
     {
       "id": 6,
       "name": "Et sodales augue elit et dui",
-      "image": "hchi12.jpg",
+      "image": "sanimalf10.jpg",
       "currency": "EUR"
     }
   ],
