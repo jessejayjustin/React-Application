@@ -1,6 +1,6 @@
 A simple model of react single page application
 
-![](https://github.com/jessejayjustin/React-Application/blob/master/public/images/react-spa.gif)
+![](https://github.com/jessejayjustin/react-spa/blob/master/public/images/react_spa.png)
 
 ## Getting Started
 
