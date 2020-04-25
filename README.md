@@ -1,4 +1,4 @@
-A simple model of react single page application
+A simple model of React Single Page Application
 
 ![](https://github.com/jessejayjustin/react-spa/blob/master/public/images/react_spa.png)
 
